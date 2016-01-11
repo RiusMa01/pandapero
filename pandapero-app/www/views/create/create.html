@@ -1,0 +1,27 @@
+<ion-view title="Create">
+  <ion-content>
+      <div class="list list-inset">
+        <label class="item item-input">
+          <input type="text" ng-model="newRecipe.name">
+        </label>
+        <label class="item item-input">
+          <input type="text" ng-model="newRecipe.description">
+        </label>
+        <ul class="item-list">
+          <li class="item item-input" ng-repeat="step in newRecipe.steps">
+            <label class="item item-input">
+              <input type="text" ng-model="newRecipe.steps[$index].dose">
+            </label>
+            <label class="item item-input">
+              <input type="text" ng-model="newRecipe.steps[$index].ingredient">
+            </label>
+          </li>
+        </ul>
+        <button class="button button-icon ion-plus item item-divider" ng-click="addStep()">
+        </button>
+      </div>
+
+      <button class="button button-block" ng-click="submit()">Save</button>
+    
+  </ion-content>
+</ion-view>

@@ -1,0 +1,95 @@
+<!--
+<ion-view title="Home">
+  <ion-content>
+    <!-- TODO 
+    <div class="card">
+      <div class="item item-divider">
+        Cocktails
+        <button class="button button-positive" ng-click="setOrderBy('rating')">Rating</button>
+        <button class="button button-positive" ng-click="setOrderBy('popularity')">Popularity</button>
+        <button class="button button-positive" ng-click="shuffleArray()">Random</button>
+      </div>
+      <a class="item" ng-repeat="item in recipes | orderBy : order : true" href="#/recipes/{{item.id}}">
+      <span>{{item.name}}</span>
+      <p>{{item.description}}</p>
+      <p>Rating : {{item.rating}}</p>
+      <p>Popularity : {{item.popularity}}</p>
+      <span ng-repeat="subItem in item.ingredients">-  {{ingredients[subItem].name}}  -</span>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>
+
+-->
+
+<ion-view title="Home">
+  <ion-content>
+    <!-- Card with random recipe -->
+    <div ng-show="randomRecipe">
+      Discover a new recipe
+      <div class="card">
+        <a href="#/recipes/{{randomRecipe.$id}}" class="item">
+          <h3>{{randomRecipe.name}}</h3>
+          <p>{{randomRecipe.description}}</p>
+          <p><i class="icon ion-heart"></i> {{randomRecipe.rate}}</p>
+          <p><i class="icon ion-wineglass"></i> {{randomRecipe.nb}}</p>
+          <!-- Recipe Picture -->
+          <!-- Recipe Ingredients -->
+        </a>
+      </div>
+    </div>
+
+    <!-- Card with last added recipe -->
+    <div ng-show="lastAdded">
+      Last Added
+      <div class="card">
+        <a href="#/recipes/{{lastAdded.$id}}" class="item">
+          <h3>{{lastAdded.name}}</h3>
+          <p>{{lastAdded.description}}</p>
+          <p><i class="icon ion-heart"></i> {{lastAdded.rate}}</p>
+          <p><i class="icon ion-wineglass"></i> {{lastAdded.nb}}</p>
+          <!-- Recipe Picture -->
+          <!-- Recipe Ingredients -->
+        </a>
+      </div>
+    </div>
+
+    <!-- Card with last preparation -->
+    <div ng-show="lastPrep">
+      Your last preparation
+      <div class="card">
+        <a href="#/recipes/{{lastPrep.$id}}" class="item">
+          <h3>{{lastPrep.name}}</h3>
+          <p>{{lastPrep.description}}</p>
+          <p><i class="icon ion-heart"></i> {{lastPrep.rate}}</p>
+          <p><i class="icon ion-wineglass"></i> {{lastPrep.nb}}</p>
+          <!-- Recipe Picture -->
+          <!-- Recipe Ingredients -->
+        </a>
+      </div>
+    </div>
+    
+    <!-- Card with recipes orderBy custom -->
+    <div class="item-list" ng-show="recipes">
+      <div class="item item-input item-select">
+        <div class="input-label">
+          Cocktails
+        </div>
+        <select ng-model="order">
+          <option value="rate" ng-selected>Best Rated</option>
+          <option value="nb">Popularity</option>
+      </select>
+      </div>
+      <a class="item" ng-repeat="recipe in recipes | orderBy : order : true" href="#/recipes/{{recipe.$id}}">
+        <!-- Recipe Picture -->
+        <h3>{{recipe.name}}</h3>
+        <p>{{recipe.description}}</p>
+        <p><i class="icon ion-heart"></i> {{recipe.rate}}</p>
+        <p><i class="icon ion-wineglass"></i> {{recipe.nb}}</p>
+      </a>
+    </div>
+
+    
+  </ion-content>
+</ion-view>
+<a href="#/create" mfb-menu position="br" label="Create Cocktail" active-icon="ion-edit" resting-icon="ion-edit" ng-click="redirectToCreate()"></a>

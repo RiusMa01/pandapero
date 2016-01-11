@@ -1,0 +1,24 @@
+<ion-view title="{{recipe.name}}">
+  <ion-content>
+    <div class="list card">
+      <div class="item">
+        <div class="item-label">Message</div>
+      </div>
+      <div class="item item-input">
+        <textarea ng-model="comment.message" name="message" rows="10"></textarea>
+      </div>
+      <div class="item">
+        <div class="item-label">Rate your experience</div>
+      </div>
+      <div class="item range range-balanced">
+        <input type="range" ng-model="comment.rate" name="rate" min="1" max="5">
+        <i class="icon ion-ios7-heart"></i>
+        <i class="icon" ng-class="{'ion-ios7-heart': comment.rate > 1, 'ion-ios7-heart-outline': comment.rate < 2}"></i>
+        <i class="icon" ng-class="{'ion-ios7-heart': comment.rate > 2, 'ion-ios7-heart-outline': comment.rate < 3}"></i>
+        <i class="icon" ng-class="{'ion-ios7-heart': comment.rate > 3, 'ion-ios7-heart-outline': comment.rate < 4}"></i>
+        <i class="icon" ng-class="{'ion-ios7-heart': comment.rate > 4, 'ion-ios7-heart-outline': comment.rate < 5}"></i>
+      </div>
+      <button class="button button-block button-balanced" ng-click="sendComments()">Send</button>
+    </div>
+  </ion-content>
+</ion-view>

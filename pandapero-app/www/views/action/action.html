@@ -1,0 +1,29 @@
+<ion-view title="{{recipe.name}}">
+	<ion-content>
+		<div>
+			<img ng-src="img/glass/pic/{{glass.id}}.jpg" style="width: 80%, height: auto">
+			<h3>{{glass.name}}</h3>
+			<p>{{glass.size_min}} - {{glass.size_max}} cl</p>
+		</div>
+
+		<ul class="list card">
+	      <span ng-repeat="step in recipe.steps">
+	      <li class="item item-divider">{{$index+1}} : {{steps[step].action}}</li>
+	      <li class="item hide {{steps[step].show}}" ng-repeat="ingredient in steps[step].ingredients">
+	        <p>{{ingredients[ingredient].name}}</p>
+	      </li>
+	    </ul>
+	    
+	    <button class="button" ng-click="previousStep()">Previous</button>
+	    <button class="button" ng-click="nextStep()">Next</button>
+
+	    <label class="item item-input">
+      <input ng-model="fill_level" type="text">%
+    </label>
+    <div class="row">
+        <img ng-src="{{image}}" style="width: 100%, height: auto">
+    </div>
+	</ion-content>
+</ion-view>
+
+<canvas id="tempCanvas"></canvas>

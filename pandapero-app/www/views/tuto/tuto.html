@@ -1,0 +1,35 @@
+<ion-view title="Welcome" class="tuto"> <!-- TODO : css tuto -->
+  <ion-nav-buttons side="left">
+  </ion-nav-buttons>
+  <ion-slide-box>
+  <!-- TODO -->
+    <ion-slide>
+      <img src="img/logo.jpg" />
+      <h2>Welcome to<br />Sunshine Resort</h2>
+    </ion-slide>
+    <!-- TODO -->
+    <ion-slide>
+      <h3>View your reservation</h3>
+      <h3>Call the concierge</h3>
+      <h3>Order room service</h3>
+      <h3>Discover resort events</h3>
+      <h3>Find local places</h3>
+      <h3>and much more!</h3>
+    </ion-slide>
+    <!-- TODO -->
+    <ion-slide>
+      <div ng-hide="authData" class="card" ng-click="login()">
+        <button class="button">
+        Log In with Facebook
+        </button>
+      </div>
+
+      <div class="card" ng-show="authData">
+        <div class="item item-text-wrap">
+          Hello {{authData.facebook.displayName}} !
+        </div>
+        <a  href="#/home"><button class="button">Go</button></a>
+      </div>
+    </ion-slide>
+  </ion-slide-box>
+</ion-view>

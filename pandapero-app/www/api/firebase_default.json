@@ -1,0 +1,40 @@
+{
+	"datas": {
+		"last_added":"-RDEFAULT",
+		"rates": {
+			"-RDEFAULT": {
+				"nb": 0,
+				"rate": 0
+			}
+		}
+	},
+	"recipes": {
+		"-RDEFAULT": {
+			"author": "-UDEFAULT",
+			"description": "Default description",
+			"name": "Default name",
+			"nb": 0,
+			"comments": {
+				"-CDEFAULT": {
+					"author": "-UDEFAULT",
+					"message": "Default comment",
+					"rate": 0,
+					"ts": 0
+				}
+			},
+			"steps": {
+				"0": {
+					"dose": 0,
+					"ingredient": "Default ingredient"
+				}
+			}
+		}
+	},
+	"users": {
+		"-UDEFAULT": {
+			"nickname":"Default user",
+			"last_prep": "-RDEFAULT",
+			"facebook": {}
+		}
+	}
+}
